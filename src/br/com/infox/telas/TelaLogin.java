@@ -27,7 +27,6 @@ public class TelaLogin extends javax.swing.JFrame {
 
         conexao = ModuloConexao.conector();
 
-        // System.out.println(conexao);
         // Status da conex~]ao
         if (conexao != null) {
             lblStatus.setIcon(
@@ -117,7 +116,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addContainerGap(34, Short.MAX_VALUE))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(374, 225));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

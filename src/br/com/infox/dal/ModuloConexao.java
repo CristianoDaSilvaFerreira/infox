@@ -17,7 +17,7 @@ public class ModuloConexao {
         java.sql.Connection conexao = null;
         
         // Chamando o drive de conexão
-        String driver = "com.mysql.jdbc.Driver";
+        String driver = "com.mysql.cj.jdbc.Driver";
         
         // Armazendo informações do banco de dados
         String url = "jdbc:mysql://localhost:3306/db_infox";
