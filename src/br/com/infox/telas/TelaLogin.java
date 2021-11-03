@@ -13,28 +13,34 @@ import br.com.infox.dal.ModuloConexao;
  * @author Cristiano
  */
 public class TelaLogin extends javax.swing.JFrame {
-    
+
     Connection conexao = null;
-    
+
     PreparedStatement prepared = null;
     ResultSet result = null;
-    
-    
 
     /**
      * Creates new form TelaLogin
      */
     public TelaLogin() {
         initComponents();
-        
+
         conexao = ModuloConexao.conector();
-        
+
         // System.out.println(conexao);
         // Status da conex~]ao
         if (conexao != null) {
-            lblStatus.setText("Conectado");
+            lblStatus.setIcon(
+                    new javax.swing.ImageIcon(getClass().getResource(
+                            "/br/com/infox/icones/dbok.png")
+                    )
+            );
         } else {
-            lblStatus.setText("Não conectado");
+            lblStatus.setIcon(
+                    new javax.swing.ImageIcon(getClass().getResource(
+                            "/br/com/infox/icones/dberror.png")
+                    )
+            );
         }
     }
 
@@ -66,7 +72,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
         jPasswordField1.setText("jPasswordField1");
 
-        lblStatus.setText("Status");
+        lblStatus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/infox/icones/dberror.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -104,14 +110,11 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(lblStatus))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(btnLogin)))
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnLogin)
+                    .addComponent(lblStatus))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         pack();
