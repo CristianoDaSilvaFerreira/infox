@@ -37,7 +37,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         lblUsuario = new javax.swing.JLabel();
         lblData = new javax.swing.JLabel();
         menuPrincipal = new javax.swing.JMenuBar();
-        menuUsuarios = new javax.swing.JMenu();
+        menuCadastro = new javax.swing.JMenu();
         menuCliente = new javax.swing.JMenuItem();
         menuOrdemServico = new javax.swing.JMenuItem();
         menuUsuario = new javax.swing.JMenuItem();
@@ -73,29 +73,29 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/infox/icones/x.png"))); // NOI18N
 
-        lblUsuario.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        lblUsuario.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         lblUsuario.setText("Usuário");
         lblUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         lblData.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lblData.setText("Data");
 
-        menuUsuarios.setText("Cadastro");
+        menuCadastro.setText("Cadastro");
 
         menuCliente.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK));
         menuCliente.setText("Cliente");
-        menuUsuarios.add(menuCliente);
+        menuCadastro.add(menuCliente);
 
         menuOrdemServico.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.ALT_MASK));
         menuOrdemServico.setText("Ordem Serviço");
-        menuUsuarios.add(menuOrdemServico);
+        menuCadastro.add(menuOrdemServico);
 
         menuUsuario.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_MASK));
         menuUsuario.setText("Usuários");
         menuUsuario.setEnabled(false);
-        menuUsuarios.add(menuUsuario);
+        menuCadastro.add(menuUsuario);
 
-        menuPrincipal.add(menuUsuarios);
+        menuPrincipal.add(menuCadastro);
 
         menuRelatorio.setText("Relatório");
         menuRelatorio.setEnabled(false);
@@ -158,9 +158,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(desktop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(53, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -237,6 +237,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lblData;
     public static javax.swing.JLabel lblUsuario;
     private javax.swing.JMenu menuAjuda;
+    private javax.swing.JMenu menuCadastro;
     private javax.swing.JMenuItem menuCliente;
     private javax.swing.JMenu menuOpcoes;
     private javax.swing.JMenuItem menuOrdemServico;
@@ -246,6 +247,5 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuServicos;
     private javax.swing.JMenuItem menuSobre;
     public static javax.swing.JMenuItem menuUsuario;
-    private javax.swing.JMenu menuUsuarios;
     // End of variables declaration//GEN-END:variables
 }
