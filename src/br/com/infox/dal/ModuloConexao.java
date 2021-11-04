@@ -14,7 +14,7 @@ import java.sql.*;
 public class ModuloConexao {
     // Método responsável por estabelecer a conexão com o banco de dados
     public static Connection conector() {
-        java.sql.Connection conexao = null;
+        Connection conexao = null;
         
         // Chamando o drive de conexão
         String driver = "com.mysql.cj.jdbc.Driver";
