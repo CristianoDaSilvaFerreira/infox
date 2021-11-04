@@ -77,3 +77,12 @@ SELECT
 FROM tb_ordem_servico AS ORDEM
 INNER JOIN tb_clientes AS CLIENTE
 ON (ORDEM.id_cliente = CLIENTE.id_cliente);
+
+SELECT * FROM tb_usuarios;
+
+-- Adicionando o campo perfil ao usuário
+ALTER TABLE tb_usuarios ADD COLUMN perfil VARCHAR(20) NOT NULL;
+
+UPDATE tb_usuarios SET perfil='admin' WHERE id_user=1;
+UPDATE tb_usuarios SET perfil='admin' WHERE id_user=2;
+UPDATE tb_usuarios SET perfil='user' WHERE id_user=3;
