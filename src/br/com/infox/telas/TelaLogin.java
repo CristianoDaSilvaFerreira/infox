@@ -7,6 +7,7 @@ package br.com.infox.telas;
 
 import java.sql.*;
 import br.com.infox.dal.ModuloConexao;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,7 +20,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
     PreparedStatement prepared = null;
     ResultSet result = null;
-    
+
     // Método Logar
     public void logar() {
         String sql = "select * from tb_usuarios where login = ? and senha = ?";
@@ -30,18 +31,35 @@ public class TelaLogin extends javax.swing.JFrame {
             prepared.setString(1, txtUser.getText());
             String capture = new String(txtPassword.getPassword());
             prepared.setString(2, capture);
-            
+
             // Executando a query
             result = prepared.executeQuery();
-            
+
             // Se existir usuário e senha correspondente
             if (result.next()) {
-                TelaPrincipal principal = new TelaPrincipal();
-                principal.setVisible(true);
-                this.dispose();
-                conexao.close();
+                // Obtendo os dados do campo perfil do banco de dados
+                String perfil = result.getString(6);
+                //System.out.println(perfil);
+
+                // Verificando o perfil do usuário
+                if (perfil.equals("admin")) {
+                    TelaPrincipal principal = new TelaPrincipal();
+                    principal.setVisible(true);
+                    TelaPrincipal.menuRelatorio.setEnabled(true);
+                    TelaPrincipal.menuUsuario.setEnabled(true);
+                    TelaPrincipal.lblUsuario.setText(result.getString(2));
+                    TelaPrincipal.lblUsuario.setForeground(Color.red);
+                    this.dispose();
+                } else {
+                    TelaPrincipal principal = new TelaPrincipal();
+                    principal.setVisible(true);                    
+                    TelaPrincipal.lblUsuario.setText(result.getString(2));
+                    TelaPrincipal.lblUsuario.setForeground(Color.blue);
+                    this.dispose();
+                }
+                //conexao.close();
             } else {
-                JOptionPane.showMessageDialog(null, 
+                JOptionPane.showMessageDialog(null,
                         "Usuário e/ou senha inválido(s)!");
             }
         } catch (Exception e) {

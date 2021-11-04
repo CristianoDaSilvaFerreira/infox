@@ -34,14 +34,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         desktop = new javax.swing.JDesktopPane();
         jLabel4 = new javax.swing.JLabel();
-        lblUser = new javax.swing.JLabel();
-        lblDate = new javax.swing.JLabel();
+        lblUsuario = new javax.swing.JLabel();
+        lblData = new javax.swing.JLabel();
         menuPrincipal = new javax.swing.JMenuBar();
         menuUsuarios = new javax.swing.JMenu();
         menuCliente = new javax.swing.JMenuItem();
         menuOrdemServico = new javax.swing.JMenuItem();
         menuUsuario = new javax.swing.JMenuItem();
-        menuServico = new javax.swing.JMenu();
+        menuRelatorio = new javax.swing.JMenu();
         menuServicos = new javax.swing.JMenuItem();
         menuAjuda = new javax.swing.JMenu();
         menuSobre = new javax.swing.JMenuItem();
@@ -64,20 +64,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
         desktop.setLayout(desktopLayout);
         desktopLayout.setHorizontalGroup(
             desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 643, Short.MAX_VALUE)
+            .addGap(0, 663, Short.MAX_VALUE)
         );
         desktopLayout.setVerticalGroup(
             desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 566, Short.MAX_VALUE)
+            .addGap(0, 462, Short.MAX_VALUE)
         );
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/infox/icones/x.png"))); // NOI18N
 
-        lblUser.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
-        lblUser.setText("Usuário");
+        lblUsuario.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        lblUsuario.setText("Usuário");
+        lblUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        lblDate.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
-        lblDate.setText("Data");
+        lblData.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblData.setText("Data");
 
         menuUsuarios.setText("Cadastro");
 
@@ -96,14 +97,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         menuPrincipal.add(menuUsuarios);
 
-        menuServico.setText("Relatório");
-        menuServico.setEnabled(false);
+        menuRelatorio.setText("Relatório");
+        menuRelatorio.setEnabled(false);
 
         menuServicos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_MASK));
         menuServicos.setText("Serviços");
-        menuServico.add(menuServicos);
+        menuRelatorio.add(menuServicos);
 
-        menuPrincipal.add(menuServico);
+        menuPrincipal.add(menuRelatorio);
 
         menuAjuda.setText("Ajuda");
 
@@ -138,41 +139,36 @@ public class TelaPrincipal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(desktop)
-                .addGap(71, 71, 71)
+                .addGap(31, 31, 31)
+                .addComponent(desktop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(lblUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblData, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(lblDate, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
-                        .addGap(79, 79, 79)))
-                .addGap(68, 68, 68))
+                        .addGap(1, 1, 1)
+                        .addComponent(lblUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(48, 48, 48)))
+                .addGap(76, 76, 76))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(desktop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(desktop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(53, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblUser)
-                        .addGap(63, 63, 63)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(85, 85, 85)
-                        .addComponent(lblDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(137, 137, 137)))
-                .addGap(37, 37, 37))
+                        .addComponent(lblUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblData, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(81, 81, 81))))
         );
 
-        setSize(new java.awt.Dimension(1046, 680));
+        setSize(new java.awt.Dimension(1048, 602));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -180,7 +176,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // Alterando a label Data pela a data atual do sistema
         Date date = new Date();
         DateFormat formatador = DateFormat.getDateInstance(DateFormat.SHORT);
-        lblDate.setText(formatador.format(date));
+        lblData.setText(formatador.format(date));
     }//GEN-LAST:event_formWindowActivated
 
     private void menuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSairActionPerformed
@@ -238,15 +234,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JDesktopPane desktop;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel lblDate;
-    private javax.swing.JLabel lblUser;
+    private javax.swing.JLabel lblData;
+    public static javax.swing.JLabel lblUsuario;
     private javax.swing.JMenu menuAjuda;
     private javax.swing.JMenuItem menuCliente;
     private javax.swing.JMenu menuOpcoes;
     private javax.swing.JMenuItem menuOrdemServico;
     private javax.swing.JMenuBar menuPrincipal;
+    public static javax.swing.JMenu menuRelatorio;
     private javax.swing.JMenuItem menuSair;
-    public static javax.swing.JMenu menuServico;
     private javax.swing.JMenuItem menuServicos;
     private javax.swing.JMenuItem menuSobre;
     public static javax.swing.JMenuItem menuUsuario;
