@@ -28,7 +28,8 @@ public class TelaLogin extends javax.swing.JFrame {
             // será substituido pelo o conteudo das variaveis
             prepared = conexao.prepareStatement(sql);
             prepared.setString(1, txtUser.getText());
-            prepared.setString(2, txtPassword.getText());
+            String capture = new String(txtPassword.getPassword());
+            prepared.setString(2, capture);
             
             // Executando a query
             result = prepared.executeQuery();
@@ -100,8 +101,6 @@ public class TelaLogin extends javax.swing.JFrame {
                 btnLoginActionPerformed(evt);
             }
         });
-
-        txtPassword.setText("jPasswordField1");
 
         lblStatus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/infox/icones/dberror.png"))); // NOI18N
 
