@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 05-Nov-2021 às 12:53
+-- Generation Time: 05-Nov-2021 às 13:15
 -- Versão do servidor: 5.7.15-log
 -- PHP Version: 5.6.26
 
@@ -86,8 +86,8 @@ CREATE TABLE `tb_usuarios` (
 
 INSERT INTO `tb_usuarios` (`id_user`, `usuario`, `fone`, `login`, `senha`, `perfil`) VALUES
 (1, 'Administrado', '2682-2682', 'admin', 'admin', 'admin'),
-(2, 'Cristiano', '98376-5945', 'cristiano', 'admin', 'admin'),
-(3, 'Aline Mothe', '99336-8054', 'aline', '01234', 'user');
+(2, 'Cristiano', '98376-0000', 'cristiano', 'admin', 'admin'),
+(3, 'Aline Mothe', '99336-1111', 'aline', '01234', 'user');
 
 --
 -- Indexes for dumped tables
