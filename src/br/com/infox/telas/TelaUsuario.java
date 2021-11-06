@@ -96,6 +96,44 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
         }
     }
 
+    // Método Editar
+    private void edit() {
+        String sql = "update tb_usuarios set usuario=?, fone=?, login=?, "
+                + "senha=?, perfil=? where id_user=?";
+        try {
+            prepared = conexao.prepareStatement(sql);
+            prepared.setString(1, txtUsuarioNome.getText());
+            prepared.setString(2, txtUsuarioTelefone.getText());
+            prepared.setString(3, txtUsuarioLogin.getText());
+            prepared.setString(4, txtUsuarioSenha.getText());
+            prepared.setString(5, cboUsuarioPerfil.getSelectedItem().toString());
+            prepared.setString(6, txtUsuarioId.getText());
+
+            if ((txtUsuarioId.getText().isEmpty())
+                    || (txtUsuarioNome.getText().isEmpty())
+                    || (txtUsuarioLogin.getText().isEmpty())
+                    || (txtUsuarioSenha.getText().isEmpty())) {
+                JOptionPane.showMessageDialog(null,
+                        "Preencha todos os campos obritórios!");
+            } else {
+
+                int add = prepared.executeUpdate();
+
+                if (add > 0) {
+                    JOptionPane.showMessageDialog(null,
+                            "Dados do usuário alterado com sucesso!");
+                    txtUsuarioId.setText(null);
+                    txtUsuarioNome.setText(null);
+                    txtUsuarioTelefone.setText(null);
+                    txtUsuarioLogin.setText(null);
+                    txtUsuarioSenha.setText(null);
+                }
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -165,6 +203,11 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
         btnUserEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/infox/icones/update.png"))); // NOI18N
         btnUserEdit.setToolTipText("Alterar");
         btnUserEdit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnUserEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUserEditActionPerformed(evt);
+            }
+        });
 
         btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/infox/icones/delete.png"))); // NOI18N
         btnDelete.setToolTipText("Remover");
@@ -258,7 +301,7 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
                 .addContainerGap(58, Short.MAX_VALUE))
         );
 
-        txtUsuarioNome.getAccessibleContext().setAccessibleDescription("Preencha com o nome completo");
+        txtUsuarioNome.getAccessibleContext().setAccessibleDescription("");
 
         setBounds(0, 0, 750, 523);
     }// </editor-fold>                        
@@ -272,6 +315,11 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
     private void btnUserCreateActionPerformed(java.awt.event.ActionEvent evt) {                                              
         create();
     }                                             
+
+    // Chamando o metodo editar
+    private void btnUserEditActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        edit();
+    }                                           
 
 
     // Variables declaration - do not modify                     
