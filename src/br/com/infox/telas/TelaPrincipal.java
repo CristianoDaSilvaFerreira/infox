@@ -73,7 +73,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/infox/icones/x.png"))); // NOI18N
 
-        lblUsuario.setFont(new java.awt.Font("Dialog", 1, 34)); // NOI18N
+        lblUsuario.setFont(new java.awt.Font("Dialog", 1, 30)); // NOI18N
         lblUsuario.setText("Usuário");
         lblUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
@@ -149,9 +149,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addGap(61, 61, 61)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblData, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -170,7 +170,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addGap(81, 81, 81))))
         );
 
-        setSize(new java.awt.Dimension(1162, 641));
+        setSize(new java.awt.Dimension(1221, 641));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
