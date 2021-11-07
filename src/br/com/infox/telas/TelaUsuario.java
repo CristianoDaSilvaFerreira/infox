@@ -133,6 +133,35 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(null, e);
         }
     }
+    
+    // Metodo Remover
+    private void remove() {
+        // Fazendo a confirmação da remoção
+        int confirma = JOptionPane.showConfirmDialog(null, 
+                "Tem que certeza que deseja remover esse usuário?", 
+                "Atenção", JOptionPane.YES_NO_OPTION);
+        if (confirma == JOptionPane.YES_OPTION) {
+            String sql = "delete from tb_usuarios where id_user=?";
+            try {
+                prepared = conexao.prepareStatement(sql);
+                prepared.setString(1, txtUsuarioId.getText());
+                
+                // Verificando se foi apagado o usuário
+                int clear = prepared.executeUpdate();
+                
+                if (clear > 0) {
+                    JOptionPane.showMessageDialog(null, "Usuário Removido com sucesso!!");
+                    txtUsuarioId.setText(null);
+                    txtUsuarioNome.setText(null);
+                    txtUsuarioTelefone.setText(null);
+                    txtUsuarioLogin.setText(null);
+                    txtUsuarioSenha.setText(null);
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+            }
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -212,6 +241,11 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
         btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/infox/icones/delete.png"))); // NOI18N
         btnDelete.setToolTipText("Remover");
         btnDelete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
         jLabel7.setText("* Login");
 
@@ -320,6 +354,11 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
     private void btnUserEditActionPerformed(java.awt.event.ActionEvent evt) {                                            
         edit();
     }                                           
+
+    // Chamando o metodo remover
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        remove();
+    }                                         
 
 
     // Variables declaration - do not modify                     
